@@ -17,15 +17,19 @@ function genAddr(username, domain, ext) {
 	pramain.document.write(username, String.fromCharCode(64), domain);  //username@domain
 	if (ext == "n")
 		pramain.document.write(String.fromCharCode(46,110,101,116,34));    //.net"
-	//else if (ext == "c")
+	else if (ext == "g")
+		pramain.document.write(String.fromCharCode(46,103,111,118,34));    //.gov"
 	else
 		pramain.document.write(String.fromCharCode(46,99,111,109,34));     //.com"
+
 	pramain.document.write(">", username, String.fromCharCode(64), domain);   // > username@domain
 	if (ext == "n")
 		pramain.document.write(String.fromCharCode(46,110,101,116));    //.net
-	//else if (ext == "c")
+	else if (ext == "g")
+		pramain.document.write(String.fromCharCode(46,103,111,118,34));    //.gov"
 	else
 		pramain.document.write(String.fromCharCode(46,99,111,109));     //.com
+
 	pramain.document.write("</A>");                                                   // </A>
 }
 
