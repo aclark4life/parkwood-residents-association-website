@@ -389,9 +389,9 @@ webpack:
 pack: webpack  # Alias
 
 # PRA
-.DEFAULT_GOAL=pra-push
-pra-push:
+.DEFAULT_GOAL=deploy
+deploy:
 	$(MAKE) git-commit-auto-push	
 	-rsync -av --partial --progress --exclude=.git --exclude=Makefile . parkwd@parkwoodresidents.org:parkwoodresidents.org/
-pra-pull:
+sync:
 	rsync -av --partial --progress parkwd@parkwoodresidents.org:parkwoodresidents.org/ .
