@@ -1,5 +1,2 @@
-
-.. raw:: html
-
-    <a href="http://parkwoodresidents.org" target="_blank">Parkwood Residents Association Website</a>
-
+Parkwood Residents Association Website
+================================================================================
