@@ -342,7 +342,7 @@ readme:
 review:
 ifeq ($(UNAME), Darwin)
 	@open -a $(EDITOR) `find $(PROJECT) -name \*.py | grep -v __init__.py | grep -v migrations`\
-		`find $(PROJECT) -name \*.html`
+		`find $(PROJECT) -name \*.html` `find $(PROJECT) -name \*.js`
 else
 	@echo "Unsupported"
 endif
@@ -388,10 +388,11 @@ webpack:
 	./node_modules/.bin/webpack
 pack: webpack  # Alias
 
-# PRA
-.DEFAULT_GOAL=deploy
-deploy:
-	-$(MAKE) git-commit-auto-push	
+# pra
+.DEFAULT_GOAL=push
+push:
+	-tidy -m home2.html
+	-$(MAKE) git-commit-auto-push   
 	-rsync -av --partial --progress --exclude=.git --exclude=Makefile . parkwd@parkwoodresidents.org:parkwoodresidents.org/
-sync:
+pull:
 	rsync -av --partial --progress parkwd@parkwoodresidents.org:parkwoodresidents.org/ .
