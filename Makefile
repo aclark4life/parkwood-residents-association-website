@@ -392,6 +392,7 @@ pack: webpack  # Alias
 .DEFAULT_GOAL=push
 push:
 	-tidy -m home2.html
+	-tidy -m sidebar.html
 	-$(MAKE) git-commit-auto-push   
 	-rsync -av --partial --progress --exclude=.git --exclude=Makefile . parkwd@parkwoodresidents.org:parkwoodresidents.org/
 pull:
