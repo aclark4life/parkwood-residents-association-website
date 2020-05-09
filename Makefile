@@ -12,8 +12,9 @@ include base.mk
 #install: pip-install
 #serve: django-serve
 
+tidy:
+	-tidy -m home2.html
+	-tidy -m sidebar.html
+
 deploy:
-	tidy -m home2.html
-	tidy -m sidebar.html
-	$(MAKE) git-commit-auto-push   
 	rsync -av --partial --progress --exclude=.git --exclude=Makefile . parkwd@parkwoodresidents.org:parkwoodresidents.org/
