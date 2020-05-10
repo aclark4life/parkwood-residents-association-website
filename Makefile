@@ -17,4 +17,4 @@ tidy:
 	-tidy -m sidebar.html
 
 deploy:
-	rsync -av --partial --progress --exclude=.git --exclude=Makefile . parkwd@parkwoodresidents.org:parkwoodresidents.org/
+	rsync -av --partial --progress --exclude=.git --exclude=Makefile --delete . parkwd@parkwoodresidents.org:parkwoodresidents.org/
